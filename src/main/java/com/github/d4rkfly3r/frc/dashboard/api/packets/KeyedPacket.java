@@ -25,6 +25,8 @@
 
 package com.github.d4rkfly3r.frc.dashboard.api.packets;
 
+import javax.annotation.Nullable;
+
 /**
  * Created by d4rkfly3r on 3/13/2016.
  * Project: FRC-Dashboard-API
@@ -33,6 +35,7 @@ public abstract class KeyedPacket<T extends Packet, I> extends Packet<KeyedPacke
 
     String key;
 
+    @Nullable
     public String getKey() {
         return key;
     }

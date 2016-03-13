@@ -25,17 +25,20 @@
 
 package com.github.d4rkfly3r.frc.dashboard.api.packets;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 /**
  * Created by d4rkfly3r on 3/13/2016.
  * Project: FRC-Dashboard-API
  */
 public class Packet00Number extends KeyedPacket<Packet00Number, Number> {
 
-    public Packet00Number(Number number) {
+    public Packet00Number(@Nonnull Number number) {
         this(null, number);
     }
 
-    public Packet00Number(String key, Number number) {
+    public Packet00Number(@Nullable String key, @Nonnull Number number) {
         this.key = key;
         this.innerData = number;
     }

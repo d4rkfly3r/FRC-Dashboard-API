@@ -25,17 +25,25 @@
 
 package com.github.d4rkfly3r.frc.dashboard.api.packets;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 /**
  * Created by d4rkfly3r on 3/13/2016.
  * Project: FRC-Dashboard-API
  */
 public class Packet03Boolean extends KeyedPacket<Packet03Boolean, Boolean> {
 
-    public Packet03Boolean(String key, Boolean data) {
+    public Packet03Boolean(@Nonnull Boolean data) {
+        this(null, data);
+    }
+
+    public Packet03Boolean(@Nullable String key, @Nonnull Boolean data) {
         this.innerData = data;
         this.key = key;
     }
 
+    @Nonnull
     public Boolean getData() {
         return innerData;
     }

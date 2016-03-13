@@ -61,8 +61,4 @@ public abstract class Packet<T extends Packet, I> implements Serializable {
     public enum Type {
         MESSAGE, JSON, SERIALIZED, UNKNOWN
     }
-
-    public void handle() {
-
-    }
 }

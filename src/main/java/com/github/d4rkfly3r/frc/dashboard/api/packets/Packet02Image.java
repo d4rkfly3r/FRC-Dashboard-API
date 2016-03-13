@@ -25,6 +25,8 @@
 
 package com.github.d4rkfly3r.frc.dashboard.api.packets;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -39,11 +41,15 @@ public class Packet02Image extends KeyedPacket<Packet02Image, byte[]> {
 
     int width, height;
 
-    public Packet02Image(int width, int height, byte[] imageByteArray) {
+    public Packet02Image(@Nonnull int width, @Nonnull int height, @Nonnull byte[] imageByteArray) {
         this(null, width, height, imageByteArray);
     }
 
-    public Packet02Image(String key, int width, int height, BufferedImage image) throws IOException {
+    public Packet02Image(@Nonnull int width, @Nonnull int height, @Nonnull BufferedImage bi) throws IOException {
+        this(null, width, height, bi);
+    }
+
+    public Packet02Image(@Nullable String key, @Nonnull int width, @Nonnull int height, @Nonnull BufferedImage image) throws IOException {
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ImageIO.write(image, "png", bos);
         this.key = key;
@@ -52,25 +58,29 @@ public class Packet02Image extends KeyedPacket<Packet02Image, byte[]> {
         this.innerData = bos.toByteArray();
     }
 
-    public Packet02Image(String key, int width, int height, byte[] imageByteArray) {
+    public Packet02Image(@Nullable String key, @Nonnull int width, @Nonnull int height, @Nonnull byte[] imageByteArray) {
         this.key = key;
         this.width = width;
         this.height = height;
         this.innerData = imageByteArray;
     }
 
+    @Nonnull
     public byte[] getImageByteArray() {
         return this.innerData;
     }
 
+    @Nonnull
     public int getWidth() {
         return width;
     }
 
+    @Nonnull
     public int getHeight() {
         return height;
     }
 
+    @Nullable
     public BufferedImage getImage() {
         BufferedImage bufferedImage;
         try {
@@ -81,5 +91,4 @@ public class Packet02Image extends KeyedPacket<Packet02Image, byte[]> {
         }
         return null;
     }
-
 }
