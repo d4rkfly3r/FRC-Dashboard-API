@@ -20,14 +20,13 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *
  */
 
 package com.github.d4rkfly3r.frc.dashboard.api.events;
 
 /**
  * Created by d4rkfly3r on 3/13/2016.
- * Project: FRC-Dashboard-API
+ * Project: FRC-Dashboard-Server
  */
-public class ModuleInitEvent extends Event{
+public abstract class Event {
 }

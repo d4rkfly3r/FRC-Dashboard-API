@@ -23,11 +23,19 @@
  *
  */
 
-package com.github.d4rkfly3r.frc.dashboard.api.events;
+package com.github.d4rkfly3r.frc.dashboard.api;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * Created by d4rkfly3r on 3/13/2016.
  * Project: FRC-Dashboard-API
  */
-public class ModuleInitEvent extends Event{
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+public @interface Module {
+    String name();
 }

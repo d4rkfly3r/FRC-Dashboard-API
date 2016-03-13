@@ -29,7 +29,7 @@ package com.github.d4rkfly3r.frc.dashboard.api.packets;
  * Created by d4rkfly3r on 3/13/2016.
  * Project: FRC-Dashboard-API
  */
-public class KeyedPacket<T extends Packet, I> extends Packet<KeyedPacket<T, I>, I> {
+public abstract class KeyedPacket<T extends Packet, I> extends Packet<KeyedPacket<T, I>, I> {
 
     String key;
 

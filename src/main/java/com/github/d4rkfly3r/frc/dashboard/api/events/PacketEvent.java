@@ -29,5 +29,5 @@ package com.github.d4rkfly3r.frc.dashboard.api.events;
  * Created by d4rkfly3r on 3/13/2016.
  * Project: FRC-Dashboard-API
  */
-public class PacketEvent {
+public class PacketEvent extends Event{
 }
