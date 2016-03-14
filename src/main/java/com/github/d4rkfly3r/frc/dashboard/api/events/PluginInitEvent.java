@@ -25,9 +25,23 @@
 
 package com.github.d4rkfly3r.frc.dashboard.api.events;
 
+import javax.annotation.Nonnull;
+import java.util.HashMap;
+
 /**
  * Created by d4rkfly3r on 3/13/2016.
  * Project: FRC-Dashboard-API
  */
 public class PluginInitEvent extends Event {
+
+    private final HashMap<Class<?>, Object> plugins;
+
+    public PluginInitEvent(@Nonnull HashMap<Class<?>, Object> plugins) {
+        this.plugins = plugins;
+    }
+
+    @Nonnull
+    public HashMap<Class<?>, Object> getPlugins() {
+        return plugins;
+    }
 }
