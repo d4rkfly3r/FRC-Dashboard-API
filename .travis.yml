@@ -21,6 +21,13 @@ notifications:
   email: false
   slack: pantherbotics:OXlqym4sDqGxnFH16THRvApR
 
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
 before_deploy:
   - rvm 1.9.3 do gem install mime-types -v 2.6.2
   - for f in "./build/libs/FRC-Dashboard-API*SNAPSHOT.jar"; do mv ${f} "./build/libs/FRC-Dashboard-API-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}-SNAPSHOT.jar"; done
