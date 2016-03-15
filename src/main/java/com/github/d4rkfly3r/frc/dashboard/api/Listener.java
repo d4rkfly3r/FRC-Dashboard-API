@@ -22,6 +22,7 @@
  * SOFTWARE.
  *
  */
+
 package com.github.d4rkfly3r.frc.dashboard.api;
 
 import java.lang.annotation.ElementType;
