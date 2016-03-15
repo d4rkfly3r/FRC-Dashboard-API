@@ -38,4 +38,9 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 public @interface Module {
     String name();
+
+    String minAPIVersion() default "0.1-SNAPSHOT";
+
+    String maxAPIVersion() default "+";
+
 }

@@ -39,8 +39,8 @@ import java.lang.annotation.Target;
 public @interface Plugin {
     String name();
 
-    double minAPIVersion() default 0.0;
+    String minAPIVersion() default "0.1-SNAPSHOT";
 
-    double maxAPIVersion() default Double.MAX_VALUE;
+    String maxAPIVersion() default "+";
 
 }
